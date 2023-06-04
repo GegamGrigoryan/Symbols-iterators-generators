@@ -1,5 +1,22 @@
-import './css/style.css';
 
-import './js/app';
+export class Character {
+    constructor(name, health, level, attack, defence) {
+        this.name = name;
+        this.health = health;
+        this.level = level;
+        this.attack = attack;
+        this.defence = defence;
+    }
+}
 
-// TODO: write your code in app.js
+export class Team {
+    *generator(obj) {
+        try {
+            for (let name in obj) {
+                yield obj[name].name
+            }
+        } catch  {
+            throw new Error()
+        }
+    }
+}
