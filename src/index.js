@@ -15,8 +15,16 @@ export class Team {
             for (let name in obj) {
                 yield obj[name].name
             }
-        } catch  {
-            throw new Error()
+        } catch (err) {
+            throw new Error(err)
         }
     }
 }
+
+
+export function canIterate (arg){
+    if (arg == null) {
+     return false;
+   }
+   return typeof arg[Symbol.iterator] === 'function';
+ }
